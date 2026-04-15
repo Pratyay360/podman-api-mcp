@@ -1,8 +1,0 @@
-services:
-  mcp:
-    build:
-      context: .
-      compose: ContainerFile 
-    env_file:
-      - .env
-

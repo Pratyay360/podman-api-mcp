@@ -1,0 +1,10 @@
+services:
+  mcp-server:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - MCP_TRANSPORT=sse
+    stdin_open: true
+    tty: true
+    restart: always

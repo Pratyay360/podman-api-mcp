@@ -728,6 +728,7 @@ dependencies = [
     { name = "httpx" },
     { name = "openapi-spec-validator" },
     { name = "prance" },
+    { name = "py-key-value-aio", extra = ["redis"] },
     { name = "pyyaml" },
     { name = "redis" },
     { name = "starlette" },
@@ -747,6 +748,7 @@ requires-dist = [
     { name = "httpx", specifier = "<1.0.0" },
     { name = "openapi-spec-validator", specifier = ">=0.7.0" },
     { name = "prance", specifier = ">=23.6.21.0" },
+    { name = "py-key-value-aio", extras = ["redis"], specifier = ">=0.4.4" },
     { name = "pyyaml", specifier = ">=6.0.0" },
     { name = "redis", specifier = ">=7.4.0" },
     { name = "starlette", specifier = ">=1.0.0" },
@@ -797,6 +799,9 @@ keyring = [
 ]
 memory = [
     { name = "cachetools" },
+]
+redis = [
+    { name = "redis" },
 ]
 
 [[package]]
