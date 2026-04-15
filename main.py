@@ -20,6 +20,7 @@ r = redis.Redis(
 )
 
 
+@mcp.tool()
 def list_endpoints() -> list[dict]:
     """List all available Podman API endpoints with their HTTP method and summary."""
     cache_key = "list_endpoints"

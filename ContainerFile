@@ -1,5 +1,0 @@
-FROM ghcr.io/astral-sh/uv:alpine3.23
-WORKDIR /app
-COPY . .
-RUN uv sync --frozen && uv cache clean
-CMD ["uv", "run", "fastmcp", "run", "main.py:mcp", "--host", "0.0.0.0", "--transport", "http"]

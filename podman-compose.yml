@@ -2,8 +2,7 @@ services:
   mcp:
     build:
       context: .
-      dockerfile: ContainerrFile
+      compose: ContainerFile 
     env_file:
       - .env
-    ports:
-      - "8000:8000"
+
