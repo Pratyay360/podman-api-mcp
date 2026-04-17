@@ -1,4 +1,4 @@
-name: Build and Push to GHCR & docker hub
+name: Build and Push to GHCR & Docker Hub
 on:
   push:
     branches: ["main"]
@@ -41,13 +41,17 @@ jobs:
           images: |
             ghcr.io/${{ github.repository }}
             docker.io/${{ secrets.DOCKER_USERNAME }}/${{ github.event.repository.name }}
-          tags: latest
+          tags: |
+            type=ref,event=branch
+            type=ref,event=pr
+            type=sha
 
-      - name: Build and push Docker image
-        uses: docker/build-push-action@v6
+      - name: Build and push with Docker Compose
+        uses: docker/compose-action@v2
         with:
           context: .
-          file: ./ContainerFile
+          compose-file: docker-compose.yml
+          images: |
+            ghcr.io/${{ github.repository }}:latest
+            docker.io/${{ secrets.DOCKER_USERNAME }}/${{ github.event.repository.name }}:latest
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}

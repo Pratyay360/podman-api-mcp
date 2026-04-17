@@ -1,3 +1,13 @@
-.git*
+.git
+.gitignore
 .env
+.pytest_cache
+.ruff_cache
+__pycache__
+*.pyc
+.venv
+venv
+.DS_Store
+*.md
+!.dockerignore
 
