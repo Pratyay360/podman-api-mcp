@@ -152,7 +152,7 @@ app.get(
   "/podman",
   Scalar({
     url: "https://storage.googleapis.com/libpod-master-releases/swagger-latest.yaml",
-    baseServerURL: "http+unix://run/user/1000/podman/podman.sock",
+    baseServerURL: "/http+unix://run/user/1000/podman/podman.sock",
     proxyUrl: "https://proxy.scalar.com",
   }),
 );
@@ -161,7 +161,7 @@ app.get(
   "/docker",
   Scalar({
     url: "https://docs.docker.com/reference/api/engine/version/v1.54.yaml",
-    baseServerURL: "http+unix://run/user/docker.sock",
+    baseServerURL: "/http+unix://run/user/docker.sock",
     proxyUrl: "https://proxy.scalar.com",
   }),
 );
