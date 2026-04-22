@@ -2,7 +2,6 @@
   "name": "api-docs",
   "type": "module",
   "dependencies": {
-    "@scalar/api-reference": "^1.52.5",
     "@scalar/hono-api-reference": "^0.10.9",
     "buffer": "^6.0.3",
     "events": "^3.3.0",

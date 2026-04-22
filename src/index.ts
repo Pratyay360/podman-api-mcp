@@ -3,7 +3,7 @@ import { createMcpHandler } from "mcp-handler";
 import { Scalar } from "@scalar/hono-api-reference";
 import { z } from "zod";
 import yaml from "js-yaml";
-import { de } from "zod/v4/locales";
+// import { de } from "zod/v4/locales";
 
 const app = new Hono();
 
@@ -77,7 +77,7 @@ const handler = createMcpHandler(
       "List all Docker Engine API routes (v1.43)",
       async () => {
         const spec = await fetchAndParseSpec(
-          "https://docs.docker.com/engine/api/v1.43/swagger.json",
+          "https://docs.docker.com/reference/api/engine/version/v1.54.yaml",
         );
         const data = extractRoutesFromSpec(spec);
         return {
@@ -91,7 +91,6 @@ const handler = createMcpHandler(
       },
     );
 
-    // Example of a search tool with input validation using Zod
     server.tool(
       "search",
       "Search for a specific route by path or operationId",
@@ -103,7 +102,7 @@ const handler = createMcpHandler(
         const url =
           api === "podman"
             ? "https://storage.googleapis.com/libpod-master-releases/swagger-latest.yaml"
-            : "https://docs.docker.com/engine/api/v1.43/swagger.json";
+            : "https://docs.docker.com/reference/api/engine/version/v1.54.yaml";
 
         const spec = await fetchAndParseSpec(url);
         const { routes } = extractRoutesFromSpec(spec);
