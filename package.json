@@ -1,5 +1,6 @@
 {
   "name": "api-docs",
+  "type": "module",
   "dependencies": {
     "@scalar/api-reference": "^1.52.5",
     "@scalar/hono-api-reference": "^0.10.9",
@@ -9,12 +10,10 @@
     "js-yaml": "^4.1.1",
     "mcp-handler": "^1.1.0"
   },
-  "scripts": {
-    "dev": "tsx index.ts",
-    "deploy": "tsx index.ts"
-  },
-  "type": "module",
   "devDependencies": {
-    "@types/js-yaml": "^4.0.9"
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^20.11.17",
+    "tsx": "^4.7.1",
+    "typescript": "^5.8.3"
   }
 }
