@@ -159,7 +159,7 @@ app.get(
 app.get(
   "/docker",
   Scalar({
-    url: "https://docs.docker.com/reference/api/engine/version/v1.43.yaml",
+    url: "https://docs.docker.com/reference/api/engine/version/v1.54.yaml",
     proxyUrl: "https://proxy.scalar.com",
   }),
 );
